@@ -2,7 +2,7 @@ body, #primary-row {
   //cursor: url(/images/cursor.png),auto;
   background-color: #424242;
   @include device('desktop') {
-    height: 100vh;
+    //height: 100vh;
   }
 }
 
