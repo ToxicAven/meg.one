@@ -20,16 +20,6 @@ app.use(require('helmet')({
 app.use(require('express-pino-logger')({ logger: log }));
 app.use(require('serve-favicon')(CONFIG.icon));
 
-// Add Link header for HTTP/2 Push events
-app.use((_req, res, next) => {
-	let pushHeader = '';
-	CONFIG.h2PushPaths.forEach((path) => pushHeader += (`<${path}>; rel=preload, `));
-
-	// Remove the trailing comma and attach the header to the response
-	res.header('Link', pushHeader.substring(0, pushHeader.length - 1));
-	next();
-});
-
 // Static Express routes (for JavaScript, images, robots.txt, manifests, etc.)
 app.use(express.static(CONFIG.static));
 app.use('/fonts', express.static(CONFIG.fonts));

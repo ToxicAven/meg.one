@@ -1,7 +1,7 @@
 {
-  "name": "jmoore.dev",
+  "name": "meg.one",
   "version": "1.0.0",
-  "description": "Personal website",
+  "description": "MEG Website",
   "main": "server/server.js",
   "scripts": {
     "test": "snyk test",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tycrek/jmoore.dev.git"
+    "url": "git+https://github.com/tycrek/meg.one.git"
   },
   "author": "Joshua Moore",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/tycrek/jmoore.dev/issues"
+    "url": "https://github.com/tycrek/meg.one/issues"
   },
-  "homepage": "https://github.com/tycrek/jmoore.dev#readme",
+  "homepage": "https://github.com/tycrek/meg.one#readme",
   "dependencies": {
     "@node-minify/core": "^5.3.0",
     "@node-minify/uglify-es": "^5.3.0",

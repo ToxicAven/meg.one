@@ -1,2 +1,2 @@
-# jmoore.dev
-Source code for my [personal website](https://jmoore.dev).
+# meg.one
+Source code for [MEG](https://meg.one).

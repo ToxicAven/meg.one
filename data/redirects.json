@@ -1,18 +1,10 @@
 [
 	{
-		"path": "donate",
-		"url": "https://paypal.me/jmoore235"
+		"path": "discord",
+		"url": "https://discord.com/invite/bGfAad4"
 	},
 	{
-		"path": "blm",
-		"url": "https://blacklivesmatter-canada.carrd.co/"
-	},
-	{
-		"path": "code",
-		"url": "https://github.com/tycrek/jmoore.dev"
-	},
-	{
-		"path": "archive",
-		"url": "https://github.com/tycrek-archive"
+		"path": "wiki",
+		"url": "https://2b2t.miraheze.org/wiki/Motorway_Extension_Gurus"
 	}
 ]

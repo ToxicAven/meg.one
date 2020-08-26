@@ -1,10 +1,10 @@
 [Unit]
-Description=Run jmoore.dev website as Node.js daemon
+Description=Run meg.one website as Node.js daemon
 After=network.target auditd.service
 
 [Service]
 Type=simple
-WorkingDirectory=/home/nodejs/jmoore.dev/
+WorkingDirectory=/home/nodejs/meg.one/
 ExecStart=/usr/local/bin/npm start
 
 # Local system user for running Node.js

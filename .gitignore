@@ -62,9 +62,3 @@ typings/
 
 # uploaded files
 uploads/
-
-*.mkv
-
-auth.json
-
-beb.jpg

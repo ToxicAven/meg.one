@@ -61,6 +61,7 @@ router.get('*', (req, res, next) => {
 	}
 });
 
+/*
 router.post('/upload', (req, res, _next) => {
 	if (!req.files || Object.keys(req.files).length === 0) return res.status(400).send('No files were uploaded');
 
@@ -69,17 +70,10 @@ router.post('/upload', (req, res, _next) => {
 	fs.pathExists(savePath)
 		.then((exists) => { if (exists) throw Error('File with same name already exists.'); })
 		.then(() => file.mv(savePath))
-		.then(() => res.send(`Uploaded to: <a href="/files/${file.name}" download>https://jmoore.dev/files/${file.name}</a>`))
+		.then(() => res.send(`Uploaded to: <a href="/files/${file.name}" download>https://meg.one/files/${file.name}</a>`))
 		.catch((err) => res.type('html').send(err.message));
 });
-
-router.get('/watch-later/add/:uri', (req, res, _next) => {
-	let file = path('../data/watch-later.json');
-	fs.readJson(file)
-		.then((json) => fs.writeJson(file, (json.urls.push(decodeURIComponent(req.params.uri)), json), { spaces: '\t' }))
-		.then(() => res.type('json').send({ success: true }))
-		.catch((err) => res.type('json').send({ success: false, msg: err.toString() }));
-});
+*/
 
 // Redirects
 fs.readJsonSync(path('../data/redirects.json')).forEach((redirect) => {

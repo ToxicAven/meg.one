@@ -7,40 +7,13 @@ const pino = require('pino')({
 module.exports = {
 	log: pino,
 	CONFIG: {
-		port: 8235,
+		port: 8236,
 		icon: joinPath('../client/static/favicon.ico'),
 		static: joinPath('../client/static'),
 		uploads: joinPath('../client/uploads'),
 		images: joinPath('../client/images'),
 		fonts: joinPath('../client/static/fonts'),
-		views: joinPath('../client/views/pages'),
-		h2PushPaths: [ // These paths will be added to the Link header for HTTP/2 Push events
-			// Static
-			'/css',
-			'/bus.js',
-			'/images/joshua-moore-1.jpg',
-			'/images/jm-vancouver-bc.jpeg',
-			'/images/transit-2019fall_commuter_map_web-1.jpg',
-
-			// Site pages
-			'/uses/',
-			'/projects/',
-			'/emby/',
-
-			// Bus
-			'/bus/',
-			'/bus/macewan/',
-			'/bus/uofa/',
-			'/bus/nait/',
-			'/bus/nait/413/',
-			'/bus/uofa/414/',
-			'/bus/uofa/404/',
-			'/bus/macewan/401/',
-			'/bus/macewan/411/',
-			'/bus/macewan/413/',
-			'/bus/macewan/411/saturday/',
-			'/bus/macewan/411/sunday/',
-		]
+		views: joinPath('../client/views/pages')
 	},
 	sass: {
 		file: joinPath('../client/sass/main.scss'),
