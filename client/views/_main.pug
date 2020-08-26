@@ -4,10 +4,7 @@ html
 	head
 		include includes/head
 	body: .row#primary-row
-		.col-3.sidebar#sidebar
-			include components/sidebar
-		.col-9#content
-			block content
-				center: h1 Coming soon!
+		block content
+			center: h1 Coming soon!
 		block scripts
 			include includes/scripts
