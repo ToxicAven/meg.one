@@ -1,14 +1,17 @@
 #menu {
-	display: table;
-	table-layout: fixed;
-	margin: 1em 2em 1em 2em;
-	width: 100%;
-
+	display: grid;
 	border-top: 1px solid #90A4AE;
 	border-bottom: 1px solid #90A4AE;
 	border-spacing: 16px;
-	
+	margin: 1em 2em 1em 2em;
+	padding: 8px 0 8px 0;
+
 	@include device('desktop') {
+		padding: unset;
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	
 		max-width: 950px;
 	}
 
