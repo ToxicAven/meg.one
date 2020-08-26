@@ -91,7 +91,8 @@ body {
 */
 a {
   transition: color .4s;
-  color: #00BCD4;
+  //color: #00BCD4;
+  color: #B0BEC5;
   outline: 0;
   text-decoration: none;
 
@@ -100,12 +101,15 @@ a {
   }
 }
 a:link, a:visited {
-  color: #00BCD4;
+  //color: #00BCD4;
+  color: #B0BEC5;
 }
 a:hover {
-  color: #80DEEA;
+  //color: #80DEEA;
+  color: #CFD8DC;
 }
 a:active {
   transition: color .3s;
-  color: #00838F;
+  //color: #00838F;
+  color: #90A4AE;
 }
