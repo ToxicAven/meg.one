@@ -1,7 +1,18 @@
 span.player {
 	display:inline-grid;
+	text-align: center;
 	
 	img {
 		padding: 4px 32px 32px 32px;
+		height: 95%;
+		transition: height .1s;
+
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+
+	img:hover {
+		height: 100%;
 	}
 }
