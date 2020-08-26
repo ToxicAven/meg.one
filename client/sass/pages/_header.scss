@@ -3,6 +3,10 @@
 	table-layout: fixed;
 	margin: 1em 2em 1em 2em;
 	width: 100%;
+
+	border-top: 1px solid #90A4AE;
+	border-bottom: 1px solid #90A4AE;
+	border-spacing: 16px;
 	
 	@include device('desktop') {
 		max-width: 950px;
