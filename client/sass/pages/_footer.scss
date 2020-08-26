@@ -1,7 +1,10 @@
 #footer {
 	margin: 16px;
 	padding-top: 8px;
-	text-align: right;
 	font-style: italic;
 	border-top: 1px solid #90A4AE;
+
+	.right {
+		float: right;
+	}
 }
