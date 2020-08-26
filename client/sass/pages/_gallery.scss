@@ -2,8 +2,13 @@ img.gallery {
 	width: 100%;
 	border: 1px solid #90A4AE;
 	border-radius: 16px;
+	max-width: 1100px;
 }
 
 #negneg-corner {
 	padding-left: 32px;
+}
+
+.col-7.gallery {
+	text-align: right;
 }
