@@ -2,6 +2,6 @@ mixin strongLink(link, text)
 	a(href=link) #[strong #{text}]
 
 mixin userImage(user, big=false)
-	span(id=user style='display:inline-grid;')
+	span.player(id=user)
 		code(style=`font-size: ${big ? '1.4' : '1.2'}rem; font-weight: bold;`)= user
-		img(src=`https://minotar.net/armor/bust/${user}/${big ? '175' : '125'}.png` alt=user style='padding: 4px 32px 32px 32px;')
+		img(src=`https://minotar.net/armor/bust/${user}/${big ? '175' : '125'}.png` alt=user)
