@@ -16,3 +16,19 @@ span.player {
 		height: 100%;
 	}
 }
+
+#faq {
+	text-align: center;
+
+	@include device('desktop') {
+		max-width: 60%;
+	}
+
+	#faq-left {
+		text-align: left;
+	}
+
+	.col-1 {
+		text-align: right;
+	}
+}
