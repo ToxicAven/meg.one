@@ -32,3 +32,9 @@ span.player {
 		text-align: right;
 	}
 }
+
+#index {
+	@include device('desktop') {
+		max-width: 950px;
+	}
+}
