@@ -1,0 +1,10 @@
+#privacy-main {
+	text-align: center;
+	@include device('desktop') {
+		max-width: 60%;
+	}
+}
+
+#privacy-secondary {
+	text-align: left;
+}
