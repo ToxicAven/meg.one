@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs-extra');
+const YAML = require('yaml');
 const pino = require('pino')({
 	prettyPrint: process.env.NODE_ENV === 'production' ? false : true
 });
@@ -34,9 +35,23 @@ function joinPath(file) {
 function getData(page) {
 	return new Promise((resolve, reject) => {
 		let filepath = joinPath(page ? `../data/${page}.json` : '../data/main.json');
+
 		fs.pathExists(filepath)
-			.then((exists) => exists ? fs.readJson(filepath) : resolve())
+			.then((exists) => exists ? fs.readJson(filepath) : yaml(page))
 			.then((json) => resolve(json))
 			.catch((err) => reject(err));
+
+
 	});
+
+	function yaml(page) {
+		return new Promise((resolve, reject) => {
+			let filepath = joinPath(page ? `../data/${page}.yaml` : '../data/main.yaml');
+			fs.pathExists(filepath)
+				.then((exists) => exists ? fs.readFile(filepath) : resolve({}))
+				.then((yaml) => YAML.parse(yaml.toString()))
+				.then((json) => resolve(json))
+				.catch((err) => reject(err));
+		});
+	}
 }
