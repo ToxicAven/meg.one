@@ -15,3 +15,9 @@ mixin faq(q, a)
 			.col-1: strong A:&nbsp;&nbsp;
 			.col-11!= a
 	br
+
+mixin asset(info)
+	- var baseUrl = '/images/pack/assets/minecraft/textures/';
+	span.asset(id=info.id class=info.class minecraft=info.class)
+		a(href='/#' onclick=`asset('${info.id}', "${info.title}", '${info.class}');return false;`): img(src=baseUrl + info.url width='128px' alt=info.title)
+		code(style='font-size: 1.2rem; font-weight: unset;')= info.title

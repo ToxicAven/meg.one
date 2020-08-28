@@ -1,0 +1,47 @@
+pack:
+  textures:
+    diamond_pickaxe:
+      meg_pickaxe:
+        id: meg_pickaxe
+        title: MEG Pickaxe
+        url: items/diamond_pickaxe.png
+        class: diamond_pickaxe
+    totem:
+      Citadel2222:
+        id: Citadel2222
+        title: Citadel2222
+        url: items/totem_Citadel2222.png
+        class: totem
+      illville502:
+        id: illville502
+        title: illville502
+        url: items/totem_illville502.png
+        class: totem
+      VeryVon:
+        id: VeryVon
+        title: VeryVon
+        url: items/totem_VeryVon.png
+        class: totem
+    netherrack:
+      tycrek_netherrack:
+        id: tycrek_netherrack
+        title: Tycrek's Netherrack
+        url: blocks/netherrack_tycrek.png
+        class: netherrack
+    obsidian:
+      tycrek_obby:
+        id: tycrek_obby
+        title: Tycrek's Obby
+        url: blocks/obsidian_tycrek.png
+        class: obsidian
+      faithful_vibrant:
+        id: faithful_vibrant
+        title: Faithful Vibrant
+        url: blocks/obsidian_faithful.png
+        class: obsidian
+    bedrock:
+      tycrek_bedrock:
+        id: tycrek_bedrock
+        title: Tycrek's Bedrock
+        url: blocks/bedrock_tycrek.png
+        class: bedrock

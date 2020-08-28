@@ -1,0 +1,39 @@
+#designer {
+	@include device('desktop') {
+		max-width: 950px;
+	}
+}
+
+span.asset {
+	display:inline-grid;
+	text-align: center;
+	padding: 8px;
+	margin: 0 8px 8px 8px;
+
+
+	transition: background-color .1s;
+	border-radius: 16px;
+	
+	&:hover {
+		background-color: #717171;
+	}
+
+	&:active {
+		background-color: #515151;
+	}
+
+	img {
+		padding: 16px 32px 4px 32px;
+		transition: height .1s;
+		min-width: 128px;
+		height: auto;
+		image-rendering: crisp-edges;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+}
+
+.asset.selected {
+	background-color: #616161;
+}

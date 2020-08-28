@@ -1,0 +1,60 @@
+extends ../_main
+block title
+	title Pack Designer - Motorway Extension Gurus
+block content
+	center: #designer
+		h1(style='text-align: center;') #[i.fad.fa-file-archive] Pack Designer
+		.row
+			.col-8
+				h2(style='text-align: center;') #[i.fad.fa-pencil-paintbrush] Create
+
+				h3 MEG Pickaxe
+				+asset(data.pack.textures.diamond_pickaxe.meg_pickaxe)
+				
+				br
+				h3 Totems
+				+asset(data.pack.textures.totem.Citadel2222)
+				+asset(data.pack.textures.totem.illville502)
+				+asset(data.pack.textures.totem.VeryVon)
+				
+				br
+				h3 Netherrack
+				+asset(data.pack.textures.netherrack.tycrek_netherrack)
+
+				br
+				h3 Obsidian
+				+asset(data.pack.textures.obsidian.tycrek_obby)
+				+asset(data.pack.textures.obsidian.faithful_vibrant)
+				
+				br
+				h3 Bedrock
+				+asset(data.pack.textures.bedrock.tycrek_bedrock)
+
+			.col-4
+				h2(style='text-align: center;') #[i.fad.fa-download] Download
+				strong Selected resources:
+				ul#pack-assets
+					// This gets populated by designer.js
+
+				button(onclick='download();') Download
+			
+			.col-4(style='text-align: center;')
+				br
+				br
+				h3 #[i.fad.fa-at] Credits
+				div(style='text-align: left;'): ul
+					li DantezWrath: #[em MEG Pickaxe]
+					li tycrek: #[em Player totems & tycrek's blocks]
+					li harritaco (?): #[em Faithful Vibrant obsidian]
+				
+block append scripts
+	script(src='/designer.js' type='text/javascript')
+
+//- Checklist:
+	1. Properly extends _main?
+	2. Page has a Title?
+	3. Page has a manifest (if required)?
+	4. Page has content (leave blank for coming soon)?
+	5. Page has scripts/styles if needed?
+	6. Page has relevant Sass?
+	7. Page is working both mobile & desktop?

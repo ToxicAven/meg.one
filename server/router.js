@@ -3,7 +3,11 @@ const fs = require('fs-extra');
 const Sass = require('node-sass');
 const minify = require('@node-minify/core');
 const uglify = require('@node-minify/uglify-es');
+const AdmZip = require('adm-zip');
+const uuid = require('uuid').v4;
 const router = require('express').Router();
+
+var TEMP_DOWNLOADS = {};
 
 module.exports = router;
 
@@ -74,6 +78,65 @@ router.post('/upload', (req, res, _next) => {
 		.catch((err) => res.type('html').send(err.message));
 });
 */
+
+router.get('/pack', (req, res, next) => {
+	let assets = req.query.assets.split(',');
+
+	let zip = new AdmZip();
+	let did = uuid();
+	let short = did.split('-')[0];
+	let archivePath = path(`../downloads/MEG-${short}.zip`);
+
+	fs.mkdir(path(`../downloads/${short}`))
+		.then(() => fs.copy(path('../client/images/pack/pack.png'), path(`../downloads/${short}/pack.png`)))
+		.then(() => getData('designer'))
+		.then((assetData) => buildPack(assetData, assets, short))
+		.then(() => fs.writeJson(path(`../downloads/${short}/pack.mcmeta`), { 'pack': { 'pack_format': 3, 'description': '\u00a7c\u00a7l\u00a7nMotorway\u00a7f \u00a76\u00a7l\u00a7nExtension\u00a7f \u00a7b\u00a7l\u00a7nGurus' } }))
+		.then(() => zip.addLocalFolder(path(`../downloads/${short}/`)))
+		.then(() => zip.writeZip(archivePath))
+		.then(() => TEMP_DOWNLOADS[did] = archivePath)
+		.then(() => res.type('json').send({ success: true, message: did }))
+		.then(() => fs.remove(path(`../downloads/${short}`)))
+		.catch((err) => {
+			log.error(err);
+			res.type('json').send({ success: false, message: err })
+		});
+});
+
+function buildPack(assetsData, assets, short) {
+	const pack = {
+		blocks: ['bedrock', 'netherrack', 'obsidian'],
+		items: ['totem', 'diamond_pickaxe']
+	};
+
+	let total = assets.length;
+	let count = 0;
+
+	return new Promise((resolve, reject) => {
+		assets.forEach((asset) => {
+			let assetId = asset.split('~~~')[0].replace(/\/|\\/g, '');
+			let assetClass = asset.split('~~~')[1].replace(/\/|\\/g, '');
+
+			let assetCategory = pack.blocks.some(block => assetClass.includes(block)) ? 'blocks' : 'items';
+			let assetFile = assetsData.pack.textures[assetClass][assetId].url.split('/')[1];
+
+			let src = path(`../client/images/pack/assets/minecraft/textures/${assetCategory}/${assetFile}`).replace(/\/|\\/g, '/');
+			let dest = path(`../downloads/${short}/assets/minecraft/textures/${assetCategory}/${assetClass}.png`).replace(/\/|\\/g, '/');
+
+			fs.copy(src, dest)
+				.then(() => count++)
+				.then(() => count == total && resolve())
+				.catch((err) => reject(err));
+		});
+	});
+}
+
+router.get('/download/:did', (req, res, _next) => {
+	res.download(TEMP_DOWNLOADS[req.params.did], (err) => {
+		err != null && log.warn(err);
+		if (res.headersSent) fs.remove(TEMP_DOWNLOADS[req.params.did]);
+	});
+});
 
 // Redirects
 fs.readJsonSync(path('../data/redirects.json')).forEach((redirect) => {
