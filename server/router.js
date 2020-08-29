@@ -91,7 +91,7 @@ router.get('/pack', (req, res, next) => {
 		.then(() => fs.copy(path('../client/images/pack/pack.png'), path(`../downloads/${short}/pack.png`)))
 		.then(() => getData('designer'))
 		.then((assetData) => buildPack(assetData, assets, short))
-		.then(() => fs.writeJson(path(`../downloads/${short}/pack.mcmeta`), { 'pack': { 'pack_format': 3, 'description': '\u00a7c\u00a7l\u00a7nMotorway\u00a7f \u00a76\u00a7l\u00a7nExtension\u00a7f \u00a7b\u00a7l\u00a7nGurus' } }))
+		.then(() => fs.writeJson(path(`../downloads/${short}/pack.mcmeta`), { 'pack': { 'pack_format': 3, 'description': '\u00a7c\u00a7l\u00a7nMotorway\u00a7f \u00a76\u00a7l\u00a7nExtension\u00a7f \u00a7b\u00a7l\u00a7nGurus\u00a7r\n\u00a78\u27a1 https:\/\/\u00a77meg.one\u00a78\/' } }))
 		.then(() => zip.addLocalFolder(path(`../downloads/${short}/`)))
 		.then(() => zip.writeZip(archivePath))
 		.then(() => TEMP_DOWNLOADS[did] = archivePath)
