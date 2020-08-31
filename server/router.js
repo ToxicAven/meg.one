@@ -116,16 +116,40 @@ function buildPack(assetsData, assets, short) {
 		assets.forEach((asset) => {
 			let assetId = asset.split('~~~')[0].replace(/\/|\\/g, '');
 			let assetClass = asset.split('~~~')[1].replace(/\/|\\/g, '');
+			let assetData = assetsData.pack.textures[assetClass][assetId];
 
 			let assetCategory = pack.blocks.some(block => assetClass.includes(block)) ? 'blocks' : 'items';
-			let assetFile = assetsData.pack.textures[assetClass][assetId].url.split('/')[1];
 
-			let src = path(`../client/images/pack/assets/minecraft/textures/${assetCategory}/${assetFile}`).replace(/\/|\\/g, '/');
-			let dest = path(`../downloads/${short}/assets/minecraft/textures/${assetCategory}/${assetClass}.png`).replace(/\/|\\/g, '/');
+			if (!assetData.files) {
+				let assetFile = assetData.url.split('/')[1];
+
+				let src = path(`../client/images/pack/assets/minecraft/textures/${assetCategory}/${assetFile}`).replace(/\/|\\/g, '/');
+				let dest = path(`../downloads/${short}/assets/minecraft/textures/${assetCategory}/${assetClass}.png`).replace(/\/|\\/g, '/');
+
+				fs.copy(src, dest)
+					.then(() => count++)
+					.then(() => count == total && resolve())
+					.catch((err) => reject(err));
+			} else {
+				transferBulk(assetData.files, short)
+					.then(() => resolve())
+					.catch((err) => reject(err));
+			}
+		});
+	});
+}
+
+function transferBulk(files, short) {
+	return new Promise((resolve, reject) => {
+		let gifTotal = files.length;
+		let gitCount = 0;
+		files.forEach((file) => {
+			let src = path(`../client/images/pack/assets/minecraft/textures/${file[0]}`).replace(/\/|\\/g, '/');
+			let dest = path(`../downloads/${short}/assets/minecraft/textures/${file[1]}`).replace(/\/|\\/g, '/');
 
 			fs.copy(src, dest)
-				.then(() => count++)
-				.then(() => count == total && resolve())
+				.then(() => gitCount++)
+				.then(() => gitCount == gifTotal && resolve())
 				.catch((err) => reject(err));
 		});
 	});

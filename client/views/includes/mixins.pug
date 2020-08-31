@@ -18,6 +18,7 @@ mixin faq(q, a)
 
 mixin asset(info)
 	- var baseUrl = '/images/pack/assets/minecraft/textures/';
+	- var image = info.icon ? info.icon : baseUrl + info.url;
 	span.asset(id=info.id class=info.class minecraft=info.class)
-		a(href='/#' onclick=`asset('${info.id}', "${info.title}", '${info.class}');return false;`): img(src=baseUrl + info.url width='128px' alt=info.title)
+		a(href='/#' onclick=`asset('${info.id}', "${info.title}", '${info.class}');return false;`): img(src=image width='128px' alt=info.title)
 		code(style='font-size: 1.2rem; font-weight: unset;')= info.title

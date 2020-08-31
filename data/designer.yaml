@@ -45,3 +45,14 @@ pack:
         title: Tycrek's Bedrock
         url: blocks/bedrock_tycrek.png
         class: bedrock
+    fire_layer:
+      harritaco_fire:
+        id: harritaco_fire
+        title: Harritaco's Fire
+        icon: /images/pack/icons/harritaco_fire.gif
+        files:
+          - [ blocks/harritaco_fire_layer_1.png, blocks/fire_layer_1.png ]
+          - [ blocks/harritaco_fire_layer_1.png.mcmeta, blocks/fire_layer_1.png.mcmeta ]
+          - [ blocks/harritaco_fire_layer_0.png, blocks/fire_layer_0.png ]
+          - [ blocks/harritaco_fire_layer_0.png.mcmeta, blocks/fire_layer_0.png.mcmeta ]
+        class: fire_layer
