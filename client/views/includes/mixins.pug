@@ -9,11 +9,11 @@ mixin userImage(user, big=false)
 mixin faq(q, a)
 	.faq
 		.row
-			.col-1: strong Q:&nbsp;&nbsp;
-			.col-11!= q
+			.col-1.faq: strong Q:&nbsp;&nbsp;
+			.col-11.faq!= q
 		.row
-			.col-1: strong A:&nbsp;&nbsp;
-			.col-11!= a
+			.col-1.faq: strong A:&nbsp;&nbsp;
+			.col-11.faq!= a
 	br
 
 mixin asset(info)

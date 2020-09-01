@@ -29,7 +29,16 @@ span.player {
 	}
 
 	.col-1 {
-		text-align: right;
+		@include device('desktop') {
+			text-align: right;
+		}
+	}
+
+	.col-1.faq, .col-11.faq {
+		width: initial;
+		@include device('desktop') {
+			width: initial;
+		}
 	}
 }
 
