@@ -2,9 +2,14 @@ mixin strongLink(link, text)
 	a(href=link) #[strong #{text}]
 
 mixin userImage(user, big=false)
+	-
+		var text, username;
+		if (Array.isArray(user)) (text = user[1], username = user[0]);
+		else text = username = user;
+
 	span.player(id=user)
-		code(style=`font-size: ${big ? '1.4' : '1.2'}rem; font-weight: bold;`)= user
-		a(href=`https://namemc.com/profile/${user}` target='_blank'): img(src=`https://minotar.net/armor/bust/${user}/${big ? '175' : '125'}.png` alt=user)
+		code(style=`font-size: ${big ? '1.4' : '1.2'}rem; font-weight: bold;`)= text
+		a(href=`https://namemc.com/profile/${username}` target='_blank'): img(src=`https://minotar.net/armor/bust/${username}/${big ? '175' : '125'}.png` alt=username)
 
 mixin faq(q, a)
 	.faq
