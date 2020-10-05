@@ -2,14 +2,14 @@ img.gallery {
 	width: 100%;
 	border: 1px solid #90A4AE;
 	border-radius: 16px;
-	max-width: 1100px;
+	max-width: 800px;
 }
 
-#negneg-corner {
+#negneg-corner, #pospos-corner, #posx-border {
 	padding-left: 32px;
 }
 
-.col-7.gallery {
+.col-6.gallery,.col-12.gallery {
 	text-align: right;
 }
 
