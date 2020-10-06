@@ -21,7 +21,7 @@ span.player {
 	text-align: center;
 
 	@include device('desktop') {
-		max-width: 60%;
+		max-width: 80%;
 	}
 
 	#faq-left {
