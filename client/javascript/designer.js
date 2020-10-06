@@ -11,6 +11,8 @@ function asset(id, title, mClass) {
 
 	if (!element.hasClass('selected')) $(`li#${id}`).remove();
 	else list.append(`<li class='${mClass}' id='${id}'>${title}</li>`);
+
+	umami.trackEvent(`item-${id}`, 'resource-pack');
 }
 
 function download() {
@@ -27,5 +29,7 @@ function download() {
 				else window.open(`/download/${json.message}`).focus();
 			})
 			.catch((err) => alert(err));
+
+		umami.trackEvent('download', 'resource-pack');
 	}
 }
