@@ -8,30 +8,25 @@ block content
 		h1 #[i.fad.fa-user-secret] Privacy Policy
 		br
 		#privacy-main: #privacy-secondary
-			h2 Information we collect
-			p We #[strong do not] actively collect any personally identifiable information, including but not limited to:
-			ul
-				li IP address
-				li Country/State
-				li Browser name, version, and other information
-			h3 How we use this information
-			p We cannot use what we do not collect.
-			
-			br
-
-			h2 Information you provide
-			p The software hosting this website automatically collects logs for internal purposes. By using this website, you automatically provide information including but not limited to:
-			ul
-				li IP Address
-				li Pages viewed
-				li Browser name, version, and other information
-			h3 How we use this information
-			p This information may be accessed to investigate problems with the website. It always remains on the server and is never sent to third parties.
-
-			br
-			
-			h2 Removal of information
-			p If you wish to have information described in "Information you provide" removed, reach out and we will work with you to remove it.
+			.row
+				.col-6.privacy
+					h2 Information we collect
+					p We use #[a(href='https://umami.is/' target='_blank') umami] for detailed analytics about site activity. By continuing to use this website, you are allowing us to collect:
+					ul
+						li IP address (only used for retrieving country and is not stored by umami)
+						li Country (we do not collect state, province, or city information)
+						li Browser name (full user-agents are #[strong not] stored by umami)
+						li Device type
+						li Operating system
+						li Pages viewed
+						li Referring page
+				.col-6.privacy
+					h2 How we use this information
+					p This information is used to learn how users use the website and allows us to improve the user experience. Your information is never sold or given to third parties.
+					p This information may also be used to investigate problems with the website. It always remains on the server and is never sent to third parties.
+				.col-6.privacy
+					h2 Removal of information
+					p If you wish to have your information removed, reach out and we will work with you to remove it.
 
 		
 //- Checklist:
