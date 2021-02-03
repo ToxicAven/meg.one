@@ -12,7 +12,10 @@ function asset(id, title, mClass) {
 	if (!element.hasClass('selected')) $(`li#${id}`).remove();
 	else list.append(`<li class='${mClass}' id='${id}'>${title}</li>`);
 
-	umami.trackEvent(`item-${id}`, 'resource-pack');
+	try {
+		umami.trackEvent(`item-${id}`, 'resource-pack');
+	} catch (ex) { }
+
 }
 
 function download() {
@@ -29,7 +32,10 @@ function download() {
 				else window.open(`/download/${json.message}`).focus();
 			})
 			.catch((err) => alert(err));
-
+			
+		try {
 		umami.trackEvent('download', 'resource-pack');
+		} catch (ex) { }
+		
 	}
 }
