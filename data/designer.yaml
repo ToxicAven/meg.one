@@ -28,6 +28,12 @@ pack:
         title: Tycrek's Netherrack
         url: blocks/netherrack_tycrek.png
         class: netherrack
+    quartz_ore:
+      quartz_aven:
+        id: quartz_aven
+        title: Aven's Quartz
+        url: blocks/quartz_aven.png
+        class: quartz_ore
     obsidian:
       tycrek_obby:
         id: tycrek_obby
