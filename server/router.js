@@ -106,7 +106,7 @@ router.get('/pack', (req, res, next) => {
 
 function buildPack(assetsData, assets, short) {
 	const pack = {
-		blocks: ['bedrock', 'netherrack', 'obsidian'],
+		blocks: ['bedrock', 'netherrack', 'quartz_ore', 'obsidian'],
 		items: ['totem', 'diamond_pickaxe']
 	};
 
