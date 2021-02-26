@@ -34,6 +34,14 @@ pack:
         title: Aven's Quartz
         url: blocks/quartz_aven.png
         class: quartz_ore
+      quartz_aven2:
+        id: quartz_aven2
+        title: Aven's Fancy Quartz
+        icon: /images/pack/icons/quartz_aven2.gif
+        files:
+          - [ blocks/quartz_aven2.png, blocks/quartz_ore.png ]
+          - [ blocks/quartz_aven2.png.mcmeta, blocks/quartz_ore.png.mcmeta ]
+        class: quartz_ore
     obsidian:
       tycrek_obby:
         id: tycrek_obby

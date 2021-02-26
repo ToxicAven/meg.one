@@ -24,8 +24,7 @@ h1, h2, h3, h4, h5, h6, #menu {
 */
 a {
   transition: color .4s;
-  //color: #00BCD4;
-  color: #B0BEC5;
+  color: $link-a-a-visited;
   outline: 0;
   text-decoration: none;
 
@@ -34,15 +33,12 @@ a {
   }
 }
 a:link, a:visited {
-  //color: #00BCD4;
-  color: #B0BEC5;
+  color: $link-a-a-visited;
 }
 a:hover {
-  //color: #80DEEA;
-  color: #CFD8DC;
+  color: $link-a-hover;
 }
 a:active {
   transition: color .3s;
-  //color: #00838F;
-  color: #90A4AE;
+  color: $link-a-active;
 }
