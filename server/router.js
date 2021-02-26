@@ -49,7 +49,7 @@ router.get('*', (req, res, next) => {
 			else {
 				page += '/index';
 				return getData(page);
-			};
+			}
 		})
 		.then((pageData) => ({
 			headTitle: headData(pageData, 'title'),
