@@ -6,6 +6,11 @@ pack:
         title: MEG Pickaxe
         url: items/diamond_pickaxe.png
         class: diamond_pickaxe
+      yesnik_pickaxe:
+        id: yesnik_pickaxe
+        title: yesnik's Pickaxe
+        url: items/yesnik_pickaxe.png
+        class: diamond_pickaxe
     totem:
       Citadel2222:
         id: Citadel2222
